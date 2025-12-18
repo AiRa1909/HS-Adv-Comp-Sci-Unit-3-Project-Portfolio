@@ -6,6 +6,14 @@
 </head>
 <body>
 <h1>Study Tracker</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
     <h3>Your Average Session Today: {{ avg }} mins</h3>
     {% if not active %}
         <form action="/start" method="POST">
