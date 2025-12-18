@@ -1,7 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
 from .models import Sesh
-from . import db
-from datetime import datetime
 
 views = Blueprint('views', __name__)
 
@@ -17,4 +15,3 @@ def home():
     active = Sesh.query.filter_by(duration=None).first()
 
     return render_template("base.html", avg=avg, active=active)
-

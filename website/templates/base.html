@@ -5,5 +5,17 @@
     <title>Study Session Tracker</title>
 </head>
 <body>
+<h1>Study Tracker</h1>
+    <h3>Your Average Session Today: {{ avg }} mins</h3>
+    {% if not active %}
+        <form action="/start" method="POST">
+            <button type="submit" class="btn">Start Your Study Session</button>
+        </form>
+    {% else %}
+        <p>Currently studying...</p>
+        <form action="/stop" method="POST">
+            <button type="submit" class="btn" >End Current Session</button>
+        </form>
+    {% endif %}
 </body>
 </html>
