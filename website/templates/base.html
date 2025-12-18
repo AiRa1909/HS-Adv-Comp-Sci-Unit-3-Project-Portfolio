@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Study Session Tracker</title>
+    <link rel="icon" href="{{ url_for('static', filename='Study.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1>Study Tracker</h1>
+    <h1 id="title">Study Tracker</h1>
+    <h3 id="sub-title">Your Average Session Today: {{ avg }} mins</h3>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
-          <div class="flash">{{ message }}</div>
+          <div id="flash">{{ message }}</div>
         {% endfor %}
       {% endif %}
     {% endwith %}
-
-    <h3>Your Average Session Today: {{ avg }} mins</h3>
     {% if not active %}
         <form action="/start" method="POST">
             <button type="submit" class="btn">Start Your Study Session</button>
         </form>
     {% else %}
-        <p>Currently studying...</p>
+        <p id="active">Currently studying...</p>
         <form action="/stop" method="POST">
             <button type="submit" class="btn" >End Current Session</button>
         </form>

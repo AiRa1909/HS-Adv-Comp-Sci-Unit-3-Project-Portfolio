@@ -1,0 +1,70 @@
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+/* making the animation for the end sesh messages because i don't want them to be on the web page for too long */
+
+body {
+    height: 100%;
+    margin: 0;
+    background: #edf2fb;
+}
+
+.btn {
+  background-color: #abc4ff;
+  color: #1b4965;
+  font-size: 25px;
+  padding: 15px 30px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flash {
+    padding: 12px 18px;
+    margin: 10px auto;
+    width: 800px;
+    height: 40px;
+    text-align: center;
+    font-size:25px;
+    border-radius: 8px;
+    font-family: "Lucida Console", monospace;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    animation: fadeOut 0.5s ease forwards;
+    animation-delay: 2s; /* wait 2 seconds before fading */
+    padding-bottom: 80px;
+}
+
+#title {
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    font-size: 80px;
+    color: #1b4965;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    padding-top: 50px;
+}
+
+#sub-title {
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    font-size: 35px;
+    color: #6096ba;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    padding-top: 50px;
+}
+
+#active {
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    font-size: 25px;
+    color: #6096ba;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+

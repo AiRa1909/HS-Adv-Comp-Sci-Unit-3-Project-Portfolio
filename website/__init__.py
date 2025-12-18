@@ -29,5 +29,9 @@ def create_database(app):
         # I must import models here so the database knows what tables to create
         from .models import Sesh
         with app.app_context():
+            db.drop_all()
+            #delete all existing table data
+            #this is so that the data is fresh whenever the project is rerun
             db.create_all()
+            #make new db fresh!
         print("Created database!")
